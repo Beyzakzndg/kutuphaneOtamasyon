@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="kutuphaneOtamasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="Personel_Id" />
+          </Key>
+          <Property Name="Personel_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Personel_Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Personel_Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Personel_Tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Persone_Tel" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Personel_Mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Personel_Adres" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Personel_KullaniciAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Personel_Sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Personel_Cinsiyet" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityContainer Name="kutuphaneOtamasyonModelStoreContainer">
+          <EntitySet Name="Personeller" EntityType="Self.Personeller" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="kutuphaneOtamasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Personeller">
+          <Key>
+            <PropertyRef Name="Personel_Id" />
+          </Key>
+          <Property Name="Personel_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Personel_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Personel_Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Personel_Tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Persone_Tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Personel_Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Personel_Adres" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Personel_KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Personel_Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Personel_Cinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="kutuphaneOtamasyonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Personeller" EntityType="Self.Personeller" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="kutuphaneOtamasyonModelStoreContainer" CdmEntityContainer="kutuphaneOtamasyonEntities">
+          <EntitySetMapping Name="Personeller">
+            <EntityTypeMapping TypeName="kutuphaneOtamasyonModel.Personeller">
+              <MappingFragment StoreEntitySet="Personeller">
+                <ScalarProperty Name="Personel_Id" ColumnName="Personel_Id" />
+                <ScalarProperty Name="Personel_Ad" ColumnName="Personel_Ad" />
+                <ScalarProperty Name="Personel_Soyad" ColumnName="Personel_Soyad" />
+                <ScalarProperty Name="Personel_Tc" ColumnName="Personel_Tc" />
+                <ScalarProperty Name="Persone_Tel" ColumnName="Persone_Tel" />
+                <ScalarProperty Name="Personel_Mail" ColumnName="Personel_Mail" />
+                <ScalarProperty Name="Personel_Adres" ColumnName="Personel_Adres" />
+                <ScalarProperty Name="Personel_KullaniciAdi" ColumnName="Personel_KullaniciAdi" />
+                <ScalarProperty Name="Personel_Sifre" ColumnName="Personel_Sifre" />
+                <ScalarProperty Name="Personel_Cinsiyet" ColumnName="Personel_Cinsiyet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
